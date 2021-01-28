@@ -1,0 +1,43 @@
+<html>
+<head>
+   {{#pageTitle}} 
+      <title>{{pageTitle}} </title>
+   {{/pageTitle}} 
+
+   <link rel="stylesheet" href="/assets/css/template.css" />
+
+   {{^pageTitle}}
+          <title>{{h.defaultPageTitle}} </title>
+   {{/pageTitle}}
+
+</head>
+<body>
+<header>
+   <h1> Cabeçalho</h1>
+  
+   {{#user}}
+      Olá, <a href="/profile" > {{user.name}} </a>! 
+   {{/user}}
+
+   <hr />
+   <ul>
+      {{#h.menus}} 
+         <li> <a href="{{slug}}" > {{name}} </a></li>
+      {{/h.menus}}
+   </ul>
+</header>   
+
+{{#flashes}}
+   
+   {{#success}}
+      <div class="warning">{{.}} </div> <br>
+   {{/success}}
+   
+   {{#error}}
+      <div class="warning">{{.}} </div> <br>
+   {{/error}}
+
+{{/flashes}}
+
+</body>
+</html>

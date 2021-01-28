@@ -1,0 +1,41 @@
+{{!Incluindo conteúdo de outras páginas , utilizando o recurso de partials}}
+
+{{> header}}
+
+{{! Fim -- Incluindo conteúdo de outras páginas}}
+
+<h1> Página home {{h.defaultPageTitle}} </h1>
+
+<h1> Seja Bem Vindo (a) {{#mostrar}} {{nome}} {{/mostrar}} </h1>
+
+<hr>
+Ingredientes <br>
+
+<ul>
+  {{#ingredientes}} 
+     <li> {{nome}} - {{quantidade}} </li> 
+  {{/ingredientes}} 
+</ul>
+
+<hr>
+Interesses <br>
+<ul>
+ {{#interesses}} 
+    <li> {{.}} </li> 
+ {{/interesses}} 
+
+</ul>
+
+Lista de Tarefas <br>
+<hr>
+
+<ul>
+ {{^listaTarefas}} 
+    <p> Não há lista de tarefas disponíveis </p>
+ {{/listaTarefas}} 
+
+</ul>
+
+
+
+
